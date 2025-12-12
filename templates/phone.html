@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="phone.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Contacts</title>
+  <link rel="stylesheet" href="emergency.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Emergency Contact Team</h1>
+    <p>If you ever feel unsafe, overwhelmed, or need immediate support, reach out to any of these trusted helpers.</p>
+  </header>
+
+  <section class="cards">
+
+    <div class="card">
+      <img src="image1.jpg" alt="Person 1">
+      <h3>Suraj</h3>
+      <p>Emergency Number:</p>
+      <span class="num">+91 98234 112</span>
+      <button onclick="callNum('9823411256')">Call Now</button>
+    </div>
+
+    <div class="card">
+      <img src="image2.jpg" alt="Person 2">
+      <h3>Sumit</h3>
+      <p>Emergency Number:</p>
+      <span class="num">+91 98765 443</span>
+      <button onclick="callNum('9876544321')">Call Now</button>
+    </div>
+
+    <div class="card">
+      <img src="image3.jpg" alt="Person 3">
+      <h3>Vishwanath</h3>
+      <p>Emergency Number:</p>
+      <span class="num">+91 90345 556</span>
+      <button onclick="callNum('9034555678')">Call Now</button>
+    </div>
+
+    <div class="card">
+      <img src="image4.jpg" alt="Person 4">
+      <h3>Santosh</h3>
+      <p>Emergency Number:</p>
+      <span class="num">+91 99887 332</span>
+      <button onclick="callNum('9988733221')">Call Now</button>
+    </div>
+
+    <div class="card">
+      <img src="image5.jpg" alt="Person 5">
+      <h3>Rohit</h3>
+      <p>Emergency Number:</p>
+      <span class="num">+91 91234 778</span>
+      <button onclick="callNum('9123477889')">Call Now</button>
+    </div>
+
+    
+
+  </section>
+
+  <script>
+    function callNum(number) {
+      window.location.href = `tel:${number}`;
+    }
+  </script>
+
+</body>
+</html>

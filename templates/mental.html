@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MentalHealth — Login / Sign Up</title>
+
+  <!-- CSS lives beside this file -->
+  <link rel="stylesheet" href="mental.css">
+</head>
+<body>
+  <div class="wrap">
+    <!-- Left info column -->
+    <aside class="left" aria-hidden="false">
+      <div class="brand">
+        <div class="logo">MH</div>
+        <div>
+          <h2>MentalHealth</h2>
+          <div class="tag">Support for your mind — safe, private, and kind.</div>
+        </div>
+      </div>
+
+      <h1>You're not alone.</h1>
+      <p class="lead">Sign in to continue: track progress, get guided check-ins and access supportive resources.</p>
+
+      <p class="muted">Confidentiality is our priority. If you are in danger, contact local emergency services immediately.</p>
+
+      <a class="back-link" href="../home/home.html">← Back to Home</a>
+    </aside>
+
+    <!-- Right: card with login/signup -->
+    <main class="card" role="main">
+      <div class="toggle" role="tablist" aria-label="Auth switch">
+        <button id="btn-login" class="active" role="tab" aria-selected="true">Login</button>
+        <button id="btn-signup" role="tab" aria-selected="false">Sign Up</button>
+      </div>
+
+      <!-- LOGIN PANEL -->
+      <section id="login-panel" aria-hidden="false">
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input id="login-email" type="email" placeholder="you@example.com" required aria-required="true" />
+          </div>
+
+          <div class="field">
+            <label for="login-pass">Password</label>
+            <div class="input-wrap">
+              <input id="login-pass" type="password" placeholder="Your password" minlength="6" required aria-required="true" />
+              <button type="button" class="pass-toggle" id="toggle-pass" aria-label="Show password">👁️</button>
+            </div>
+          </div>
+
+          <div class="actions">
+            <!-- This will validate and then redirect to the app on success -->
+            <button type="submit" id="signinBtn" class="primary-btn">Sign in</button>
+            <button type="button" class="ghost" id="forgot">Forgot?</button>
+          </div>
+
+          <div class="small">Or continue with social sign in (not implemented).</div>
+          <div class="foot">By continuing you agree to our terms and privacy policy.</div>
+        </form>
+      </section>
+
+      <!-- SIGNUP PANEL -->
+      <section id="signup-panel" style="display:none" aria-hidden="true">
+        <form id="signup-form" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="first">First name</label>
+              <input id="first" type="text" placeholder="Jane" required />
+            </div>
+            <div class="field">
+              <label for="last">Last name</label>
+              <input id="last" type="text" placeholder="Doe" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="signup-email">Email</label>
+            <input id="signup-email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="field">
+            <label for="signup-pass">Password</label>
+            <div class="input-wrap">
+              <input id="signup-pass" type="password" placeholder="At least 6 characters" minlength="6" required />
+              <button type="button" class="pass-toggle" id="toggle-pass-2" aria-label="Show password">👁️</button>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="primary-btn" id="createAccountBtn" type="button">Create account</button>
+            <button class="ghost" type="button" id="cancel-signup">Cancel</button>
+          </div>
+
+          <div class="small" id="signup-helper">We value your privacy. You can delete your account at any time.</div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="mental.js"></script>
+</body>
+</html>

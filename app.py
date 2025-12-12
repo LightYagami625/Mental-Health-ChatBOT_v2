@@ -32,18 +32,6 @@ def chat_api():
     if not user_message:
         return jsonify({'error': 'Thik se daal BKL'}), 400
 
-    # MENTAL_HEALTH_KEYWORDS = [
-    # "anxiety", "panic", "depression", "sad", "stress", "overwhelmed",
-    # "hopeless", "mental", "therapy", "lonely", "trauma", "mood",
-    # "fear", "worry", "self-esteem", "mental health", "grief"]
-
-    # def is_mental_health_message(msg: str) -> bool:
-    #     m = msg.lower()
-    #     return any(k in m for k in MENTAL_HEALTH_KEYWORDS)
-
-    # if not is_mental_health_message(user_message):
-    #     return "I'm here only for mental-health–related support. I can't answer that question, but I can help if you're struggling emotionally."    
-
     try:
         response = generate_mental_health_response(user_message)
         return jsonify({'response': response})
