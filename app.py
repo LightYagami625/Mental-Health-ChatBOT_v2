@@ -18,11 +18,27 @@ client = genai.Client(api_key=api_key)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
+
+@app.route('/about')
+def about():
+    return render_template('About.html')
+
+@app.route('/features')
+def features():
+    return render_template('features.html')
+
+@app.route('/emergency')
+def emergency():
+    return render_template('phone.html')
+
+@app.route('/login')
+def login():
+    return render_template('mental.html')
 
 @app.route('/chat')
 def chat():
-    return render_template('chat.html')
+    return render_template('chatbot.html')
 
 @app.route('/api/chat', methods=['POST'])
 def chat_api():

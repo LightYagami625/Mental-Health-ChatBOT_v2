@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Features — MentalHealth AI</title>
-  <link rel="stylesheet" href="features.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='features.css') }}">
 </head>
+
 <body>
 
   <header class="site-header">
@@ -23,41 +25,54 @@
   <main class="main wrap" id="main">
     <section class="hero">
       <h2>Features designed to support your mental wellbeing</h2>
-      <p class="lead">From check-ins to guided coping techniques — thoughtfully designed to help you feel a little better today.</p>
+      <p class="lead">From check-ins to guided coping techniques — thoughtfully designed to help you feel a little
+        better today.</p>
     </section>
 
     <section class="features-grid" aria-label="Features list">
       <!-- Feature card 1 -->
       <article class="feature">
         <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M2 3h20v14H6l-4 4V3z"></path></svg>
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M2 3h20v14H6l-4 4V3z"></path>
+          </svg>
         </div>
         <h3>24/7 Conversational Support</h3>
-        <p class="desc">A listening presence whenever you need to share — not a replacement for professionals, but an immediate supportive companion.</p>
+        <p class="desc">A listening presence whenever you need to share — not a replacement for professionals, but an
+          immediate supportive companion.</p>
         <div id="f1detail" class="detail">
-          <p>Short prompts, empathetic replies, and safe escalation suggestions when needed. Keep a private, searchable chat history (local or account-based).</p>
+          <p>Short prompts, empathetic replies, and safe escalation suggestions when needed. Keep a private, searchable
+            chat history (local or account-based).</p>
         </div>
       </article>
 
       <!-- Feature card 2 -->
       <article class="feature">
         <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM8 10a1.5 1.5 0 11.001-3.001A1.5 1.5 0 018 10zm8 0a1.5 1.5 0 11.001-3.001A1.5 1.5 0 0116 10zm-8 5s1.5-2 4-2 4 2 4 2H8z"></path></svg>
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path
+              d="M12 2a10 10 0 100 20 10 10 0 000-20zM8 10a1.5 1.5 0 11.001-3.001A1.5 1.5 0 018 10zm8 0a1.5 1.5 0 11.001-3.001A1.5 1.5 0 0116 10zm-8 5s1.5-2 4-2 4 2 4 2H8z">
+            </path>
+          </svg>
         </div>
         <h3>Mood Tracking & Check-ins</h3>
         <p class="desc">Quick daily check-ins let you track mood patterns over time and reflect on progress.</p>
         <div id="f2detail" class="detail">
-          <p>Visualize trends, tag triggers, and optionally export your data to notice patterns and guide conversations with clinicians.</p>
+          <p>Visualize trends, tag triggers, and optionally export your data to notice patterns and guide conversations
+            with clinicians.</p>
         </div>
       </article>
 
       <!-- Feature card 3 -->
       <article class="feature">
         <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16 5.5 20l2-7L2 9h7z"></path></svg>
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M12 2l3 7h7l-5.5 4 2 7L12 16 5.5 20l2-7L2 9h7z"></path>
+          </svg>
         </div>
         <h3>Guided Coping Techniques</h3>
-        <p class="desc">Short breathing exercises, grounding techniques, and micro-activities to reduce immediate distress.</p>
+        <p class="desc">Short breathing exercises, grounding techniques, and micro-activities to reduce immediate
+          distress.</p>
         <div id="f3detail" class="detail">
           <p>Step-by-step breathing, progressive muscle relaxation, and cognitive reframes you can use anywhere.</p>
         </div>
@@ -66,31 +81,40 @@
       <!-- Feature card 4 -->
       <article class="feature">
         <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M4 2h12v12H4zM20 6h-2V2h-2v4h-2v2h6V6z"></path></svg>
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M4 2h12v12H4zM20 6h-2V2h-2v4h-2v2h6V6z"></path>
+          </svg>
         </div>
         <h3>Curated Resource Library</h3>
-        <p class="desc">Articles, short courses, and links to trusted mental health resources — hand-picked for accessibility.</p>
+        <p class="desc">Articles, short courses, and links to trusted mental health resources — hand-picked for
+          accessibility.</p>
         <div id="f4detail" class="detail">
-          <p>Resources are categorized by topic (sleep, anxiety, motivation) and include clear next steps and safety information.</p>
+          <p>Resources are categorized by topic (sleep, anxiety, motivation) and include clear next steps and safety
+            information.</p>
         </div>
       </article>
 
       <!-- Feature card 5 -->
       <article class="feature">
         <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M12 1l8 4v6c0 5-3.8 9.4-8 10-4.2-.6-8-5-8-10V5l8-4z"></path></svg>
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M12 1l8 4v6c0 5-3.8 9.4-8 10-4.2-.6-8-5-8-10V5l8-4z"></path>
+          </svg>
         </div>
         <h3>Privacy & Safety First</h3>
         <p class="desc">We prioritize privacy and provide clear guidance for crisis situations and external help.</p>
         <div id="f5detail" class="detail">
-          <p>Your data stays with you: local-first storage or encrypted account storage (depending on configuration). For emergencies, local helplines are recommended.</p>
+          <p>Your data stays with you: local-first storage or encrypted account storage (depending on configuration).
+            For emergencies, local helplines are recommended.</p>
         </div>
       </article>
 
       <!-- Feature card 6 -->
       <article class="feature">
         <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M3 12h18M12 3v18"></path></svg>
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M3 12h18M12 3v18"></path>
+          </svg>
         </div>
         <h3>Integrations & Export</h3>
         <p class="desc">Export check-ins, share reports with therapists, or integrate with calendars for reminders.</p>
@@ -103,9 +127,11 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <small>© 2025 MentalHealth AI — Not a substitute for professional care. If you're in immediate danger, contact local emergency services.</small>
+      <small>© 2025 MentalHealth AI — Not a substitute for professional care. If you're in immediate danger, contact
+        local emergency services.</small>
     </div>
   </footer>
 
 </body>
+
 </html>

@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MentalHealth — Login / Sign Up</title>
 
   <!-- CSS lives beside this file -->
-  <link rel="stylesheet" href="mental.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='mental.css') }}">
 </head>
+
 <body>
   <div class="wrap">
     <!-- Left info column -->
@@ -23,9 +25,10 @@
       <h1>You're not alone.</h1>
       <p class="lead">Sign in to continue: track progress, get guided check-ins and access supportive resources.</p>
 
-      <p class="muted">Confidentiality is our priority. If you are in danger, contact local emergency services immediately.</p>
+      <p class="muted">Confidentiality is our priority. If you are in danger, contact local emergency services
+        immediately.</p>
 
-      <a class="back-link" href="../home/home.html">← Back to Home</a>
+      <a class="back-link" href="{{ url_for('index') }}">← Back to Home</a>
     </aside>
 
     <!-- Right: card with login/signup -->
@@ -46,7 +49,8 @@
           <div class="field">
             <label for="login-pass">Password</label>
             <div class="input-wrap">
-              <input id="login-pass" type="password" placeholder="Your password" minlength="6" required aria-required="true" />
+              <input id="login-pass" type="password" placeholder="Your password" minlength="6" required
+                aria-required="true" />
               <button type="button" class="pass-toggle" id="toggle-pass" aria-label="Show password">👁️</button>
             </div>
           </div>
@@ -100,6 +104,7 @@
     </main>
   </div>
 
-  <script src="mental.js"></script>
+  <script src="{{ url_for('static', filename='mental.js') }}"></script>
 </body>
+
 </html>
