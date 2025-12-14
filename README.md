@@ -67,7 +67,9 @@ This project is licensed under the **MIT License** – see the `LICENSE` file fo
 ---
 
 Developed by
--Prajwal Naik [https://github.com/Prajwalnaik4563/Prajwal-Naik]
+-Prajwal Naik [https://github.com/Prajwalnaik4563]
+
+
 -Swayam Kesarkar [https://github com/LightYagami625]
 
 
