@@ -5,6 +5,7 @@ from google import genai
 from google.genai import types
 from model.model import generate_mental_health_response
 
+
 load_dotenv()
 
 app = Flask(__name__)
@@ -31,6 +32,7 @@ def features():
 @app.route('/emergency')
 def emergency():
     return render_template('phone.html')
+
 
 @app.route('/login')
 def login():
