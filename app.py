@@ -1,20 +1,16 @@
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
 import os
-from google import genai
-from google.genai import types
-from model.model import generate_mental_health_response
+# from model.model import generate_mental_health_response
+from model.rag import retrieve_response 
+# from sentence_transformers import SentenceTransformer
 
 load_dotenv()
 
+# print("Loading model...")
+# model = SentenceTransformer('all-MiniLM-L6-v2')
+
 app = Flask(__name__)
-
-# Configure Gemini
-api_key = os.getenv("GEMINI_API_KEY")
-
-# Initialize client
-client = genai.Client(api_key=api_key)
-
 
 @app.route('/')
 def index():
@@ -49,11 +45,11 @@ def chat_api():
         return jsonify({'error': 'Thik se daal BKL'}), 400
 
     try:
-        response = generate_mental_health_response(user_message)
-        return jsonify({'response': response})
+        response_text, category = retrieve_response(user_message)
+        return jsonify({'response': response_text, 'category': category})
     except Exception as e:
-        print(f"Error calling Gemini: {e}")
+        print(f"Error : {e}")
         return jsonify({'error': 'Failed to generate response'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5500)
