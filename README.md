@@ -33,9 +33,11 @@ cd Mental-Health-ChatBOT_v2
 ```bash
 # Create a virtual environment (optional but recommended)
 python3 -m venv venv
-
+```
+```bash
 source venv/bin/activate # For Linux / Mac Users
-
+```
+```bash
 venv\Script\activate # For Windows Users
 ```
 
