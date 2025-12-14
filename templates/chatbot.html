@@ -106,6 +106,45 @@
       box-shadow: 0 8px 20px rgba(99, 102, 241, 0.06);
     }
 
+    .category-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    .category-icon {
+      font-size: 24px;
+      background: #f3e8ff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    .category-text {
+      font-weight: 600;
+      color: #4c1d95;
+      font-size: 15px;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .quick-list {
       display: flex;
       flex-direction: column;
@@ -398,12 +437,10 @@
       </div>
 
       <div>
-        <div class="mood-label">How are you feeling?</div>
-        <div class="mood-row" id="moodRow">
-          <button class="mood-btn" data-mood="sad">Sad</button>
-          <button class="mood-btn selected" data-mood="neutral">Neutral</button>
-          <button class="mood-btn" data-mood="okay">Okay</button>
-          <button class="mood-btn" data-mood="good">Good</button>
+        <div class="mood-label">Current Focus</div>
+        <div class="category-card" id="categoryCard">
+          <div class="category-icon">🧠</div>
+          <div class="category-text" id="categoryText">General Support</div>
         </div>
       </div>
 
@@ -466,7 +503,7 @@
     const sendBtn = document.getElementById("sendBtn");
     const micBtn = document.getElementById("micBtn");
     const micToast = document.getElementById("micToast");
-    const moodRow = document.getElementById("moodRow");
+    const categoryText = document.getElementById("categoryText");
     const quickList = document.getElementById("quickList");
     const statusEl = document.getElementById("status");
 
@@ -543,19 +580,27 @@
       showTypingIndicator();
 
       try {
-        const mood = document.querySelector('.mood-btn.selected')?.dataset?.mood || 'neutral';
 
         // Call Backend API
         const response = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: text, mood: mood })
+          body: JSON.stringify({ message: text })
         });
 
         if (!response.ok) throw new Error('Network response was not ok');
 
         const data = await response.json();
         const replyText = data.response; // Backend returns { response: "..." }
+        const category = data.category || "General Support";
+
+        // Update Category Display
+        if (categoryText) {
+          categoryText.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+          categoryText.style.animation = 'none';
+          categoryText.offsetHeight; /* trigger reflow */
+          categoryText.style.animation = 'fadeSlide 0.4s ease';
+        }
 
         hideTypingIndicator();
         chatHistory.push({ role: 'assistant', text: replyText, time: new Date().toLocaleTimeString() });
@@ -579,8 +624,6 @@
     // Quick prompts
     quickList.querySelectorAll('.quick-item').forEach(btn => btn.addEventListener('click', () => { input.value = btn.textContent; input.focus(); }));
 
-    // Mood selector
-    moodRow.querySelectorAll('.mood-btn').forEach(b => b.addEventListener('click', () => { moodRow.querySelectorAll('.mood-btn').forEach(x => x.classList.remove('selected')); b.classList.add('selected'); }));
 
     // ---------- Improved speech recognition: avoid duplicate words ----------
     // Behavior:

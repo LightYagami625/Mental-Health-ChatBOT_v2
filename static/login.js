@@ -171,7 +171,7 @@ loginForm.addEventListener("submit", (e) => {
     loginMsg.classList.add("success");
 
     setTimeout(() => {
-      window.location.href = "/dashboard";
+      window.location.href = "/chat";
     }, 900);
   }, 1200);
 });

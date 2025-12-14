@@ -30,7 +30,7 @@ def emergency():
 
 @app.route('/login')
 def login():
-    return render_template('mental.html')
+    return render_template('login.html')
 
 @app.route('/chat')
 def chat():
