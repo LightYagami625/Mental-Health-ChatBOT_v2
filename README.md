@@ -55,7 +55,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-Open your browser and visit **http://127.0.0.1:5000**. You’ll be greeted by a sleek chat interface where you can start a conversation.
+Open your browser and visit **http://127.0.0.1:5500**. You’ll be greeted by a sleek chat interface where you can start a conversation.
 
 ---
 
